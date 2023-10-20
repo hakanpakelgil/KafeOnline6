@@ -8,7 +8,7 @@ namespace KafeOnline6.Data
 {
     public class KafeVeri
     {
-        public int MasaAdet {  get; set; }
+        public int MasaAdet { get; set; } = 20;
         public List<Urun> Urunler { get; set; } = new List<Urun>();
         public List<Siparis> AktifSiparisler { get; set; } = new List<Siparis>();//new(); böylede gösterilebilir
         public List<Siparis> GecmisSiparisler { get; set; } = new List<Siparis>();

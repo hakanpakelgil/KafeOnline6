@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
             menuStrip1 = new MenuStrip();
             tsmiUrunler = new ToolStripMenuItem();
             tsmiGecmisSiparisler = new ToolStripMenuItem();
             lvwMasalar = new ListView();
+            ilMasalar = new ImageList(components);
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,15 +58,26 @@
             tsmiGecmisSiparisler.Name = "tsmiGecmisSiparisler";
             tsmiGecmisSiparisler.Size = new Size(108, 20);
             tsmiGecmisSiparisler.Text = "Geçmiş Siparişler";
+            tsmiGecmisSiparisler.Click += tsmiGecmisSiparisler_Click;
             // 
             // lvwMasalar
             // 
             lvwMasalar.Dock = DockStyle.Fill;
+            lvwMasalar.LargeImageList = ilMasalar;
             lvwMasalar.Location = new Point(0, 24);
             lvwMasalar.Name = "lvwMasalar";
             lvwMasalar.Size = new Size(800, 426);
             lvwMasalar.TabIndex = 1;
             lvwMasalar.UseCompatibleStateImageBehavior = false;
+            lvwMasalar.DoubleClick += lvwMasalar_DoubleClick;
+            // 
+            // ilMasalar
+            // 
+            ilMasalar.ColorDepth = ColorDepth.Depth8Bit;
+            ilMasalar.ImageStream = (ImageListStreamer)resources.GetObject("ilMasalar.ImageStream");
+            ilMasalar.TransparentColor = Color.Transparent;
+            ilMasalar.Images.SetKeyName(0, "bos");
+            ilMasalar.Images.SetKeyName(1, "dolu");
             // 
             // AnaForm
             // 
@@ -88,5 +102,6 @@
         private ToolStripMenuItem tsmiUrunler;
         private ToolStripMenuItem tsmiGecmisSiparisler;
         private ListView lvwMasalar;
+        private ImageList ilMasalar;
     }
 }
